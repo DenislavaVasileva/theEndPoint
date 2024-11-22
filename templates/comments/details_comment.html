@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block style %}
+	<style>
+        body {
+            background-image: url('{% static "images/rabotka_gerka2560x1440-19800.jpg" %}');
+            background-size: cover;
+            background-position: top;
+            height: 100vh;
+            color: white;
+        }
+    </style>
+{% endblock %}
+
+{% block content %}
+    <div class="p-2 mb-1 mt-2">
+        <h4 class=" text-dark mb-3 ms-1"> Comment's details:</h4>
+        <ul class="list-group">
+            <li class=" list-group-item bg-dark bg-opacity-75 text-light mb-2">
+                <strong>{{ comment.author }}</strong> said:
+                <p>{{ comment.content }}</p>
+                <small>
+                    Posted on {{ comment.created_at|date:"d-M-Y H:i" }}
+                </small>
+
+                <div id="action-buttons">
+                    {% if user.is_authenticated%}
+                        <a class="btn btn-outline-light me-2" href="{% url 'edit_comment' post.pk comment.pk %}">Edit</a>
+                        <a class="btn btn-outline-light me-2" href="{% url 'delete_comment' post.pk comment.pk %}">Delete</a>
+                    {% endif %}
+                </div>
+            </li>
+        </ul>
+    </div>
+{% endblock %}

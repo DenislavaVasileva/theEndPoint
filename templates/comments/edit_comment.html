@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="p-3 mb-5 bg-dark bg-opacity-75">
+        <h1 class=" mb-4 text-light text-center"> Edit Comment </h1>
+
+        <form method="post">
+            {% csrf_token %}
+
+            <div class="mb-3">
+                <div class="col-md-4 mx-auto">
+                    {{ form.content.label_tag }}
+                    {{ form.content }}
+                </div>
+            </div>
+    
+
+            <!-- form button -->
+            <div class="d-flex justify-content-center">
+                <button class="btn btn-outline-light" style="width: 33%;">Edit</button>
+            </div>
+        </form>
+    </div>
+
+{% endblock %}

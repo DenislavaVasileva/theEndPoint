@@ -1,0 +1,77 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block style %}
+    <style>
+        body {
+        {#background-image: url('{% static "images/white_bg.jfif" %}');#}{#background-size: cover;#}{#background-position: center;#}{#height: 100vh;#} color: white;
+        }
+    </style>
+{% endblock %}
+
+{% block content %}
+
+
+    <div class="mb-3 p-3 mt-1 bg-dark rounded-3">
+        <h3>{{ post.title }}</h3>
+        <small>Posted by {{ post.author }} on {{ post.created_at|date:"d-M-Y" }}</small><br>
+        <small>Category: {{ post.category }}</small>
+        <hr>
+        {% if post.post_image %}
+            <img src="{{ post.post_image.url }}" alt="Post Image">
+        {% endif %}
+        <p>{{ post.content| linebreaks }}</p>
+        <hr>
+        <!--Edit and Delete buttons -->
+        <div id="action-buttons">
+            {% if user.is_authenticated and user.profile == post.author %}
+                <a class="btn btn-outline-light me-2" href="{% url 'edit-post' post.pk %}">Edit</a>
+                <a class="btn btn-outline-light me-2" href="{% url 'delete-post' post.pk %}">Delete</a>
+            {% endif %}
+        </div>
+    </div>
+
+    {% if user.is_authenticated %}
+        <div class="p-2 mb-4">
+            <h4 class="text-dark mb-0">Add Comment</h4>
+            <form method="POST">
+                {% csrf_token %}
+                {{ comment_form.content.label_tag }}
+                {{ comment_form.content }}
+
+                {{ comment_form.author.label_tag }}
+                {{ comment_form.author }}
+                <button type="submit" class="btn btn-outline-dark mt-3">Comment</button>
+            </form>
+        </div>
+    {% else %}
+        <p class="text-dark p-2">Please <a href="{% url 'login' %}">log in</a> to comment.</p>
+    {% endif %}
+
+    <!-- Display Comments -->
+    <div class="p-2 mb-1">
+        <h4 class=" text-dark mb-0">Comments </h4>
+
+        <hr class="text-dark">
+        {% if comments %}
+            <ul class="list-group">
+                {% for comment in comments %}
+                    <li class=" list-group-item bg-dark bg-opacity-50 text-light mb-2">
+                        <strong>{{ comment.author }}</strong> said:
+                        <p>{{ comment.content }}</p>
+                        <small>
+                            Posted on {{ comment.created_at|date:"d-M-Y H:i" }} |
+                            {% if user.is_authenticated and user.username == comment.author %}
+                                <a class='text-dark' href="{% url 'details_comment' post.pk comment.pk %}">More
+                                    Details</a>
+                            {% endif %}
+                        </small>
+                    </li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p class="text-dark p-2">No comments yet. Be the first to comment!</p>
+        {% endif %}
+    </div>
+    <hr class="text-dark">
+
+{% endblock %}

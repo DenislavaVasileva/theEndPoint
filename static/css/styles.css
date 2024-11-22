@@ -1,0 +1,10 @@
+.form-control {
+    background-color: #2d2f36; /* Dark background color */
+    color: #ffffff; /* White text color */
+    border: 1px solid #444; /* Dark border color */
+}
+
+
+.form-control::placeholder {
+    color: rgba(255, 255, 255, 0.6); /* Lighter color for placeholders */
+}

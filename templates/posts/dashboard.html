@@ -1,0 +1,89 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block style %}
+    <style>
+        body {
+            background-image: url('{% static "images/rabotka_gerka2560x1440-19800.jpg" %}');
+            background-size: cover;
+            background-position: top;
+            height: 100vh;
+            color: white;
+        }
+    </style>
+{% endblock %}
+{% block content %}
+
+     <nav class="navbar navbar-expand-lg bg-dark bg-opacity-75">
+        <div class="container-fluid">
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 ">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle text-light" href="#" role="button" data-bs-toggle="dropdown"
+                           aria-expanded="false">
+                            Category
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="{% url 'dashboard' %}">All categories</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            {% for category in categories %}
+                                <li><a class="dropdown-item"
+                                       href="?category={{ category.name }}">{{ category.name }}</a></li>
+                            {% endfor %}
+                        </ul>
+                    </li>
+
+                    {% if request.user.is_authenticated %}
+
+                        <li class="nav-item">
+                            <a class="nav-link text-light" href="{% url 'add-post' %}">Add Post</a>
+                        </li>
+                    {% else %}
+                        <li class="nav-item">
+                            <a class="nav-link text-light" href="{% url 'login' %}">Add Post</a>
+                        </li>
+
+                    {% endif %}
+                </ul>
+                <form method="GET" class="d-flex" role="search">
+                    {{ search_form.as_p }} <!-- Render the form fields -->
+                    <button class="btn btn-outline-light ms-2" style="height: fit-content" type="submit">Search</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+
+
+
+
+    <div class="container text-light mt-5">
+        {% if posts %}
+            {% for post in posts %}
+                <div class="p-2 m-2 bg-dark bg-opacity-75 rounded-1">
+
+                    <h2>
+                        <a class="text-light text-decoration-none" role="button"
+                           href="{% url 'details-post' post.pk %}">
+                            {{ post.title|capfirst }}
+                        </a>
+                    </h2>
+                    <p>{{ post.content| truncatewords:3 }}</p>
+
+                    <div>
+                        <span>
+                                <a href="{% url 'profile_details' post.author.pk %}">
+                                    {{ post.author.user.username}}
+                                </a>-{{ post.created_at|date:"d-M-Y" }}-{{ post.category }}
+                        </span>
+                    </div>
+                </div>
+            {% endfor %}
+        {% else %}
+            <div class="p-2 bg-dark text-center rounded-3">
+                <h1>No Posts Yet</h1>
+            </div>
+        {% endif %}
+    </div>
+
+{% endblock %}
