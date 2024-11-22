@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block style %}
+	<style>
+        body {
+            background-image: url('{% static "images/dash.avif" %}');
+            background-size: cover;
+            background-position: bottom;
+            height: 150vh;
+            color: white;
+        }
+    </style>
+{% endblock %}
+{% block content %}
+<div class="container text-center text-light mt-5">
+    <div class="row">
+        {% for peak in peaks %}
+            <div class="col-md-3 mb-4">
+                <div class="card bg-dark text-light h-100">
+                    <img src="{{ peak.image.url }}" class="card-img-top" alt="{{ peak.name }}" style="height: 300px; object-fit: cover;">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ peak.name }}</h5>
+                        <p class="card-text">{{ peak.description|truncatewords:6 }}</p>
+                        <a href="#" class="btn btn-outline-light btn-sm">Learn More</a>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+    
+{% endblock %}

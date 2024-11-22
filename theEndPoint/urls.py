@@ -7,6 +7,7 @@ urlpatterns = [
     path('', include('theEndPoint.home.urls')),
     path('accounts/', include('theEndPoint.accounts.urls')),
     path('posts/', include('theEndPoint.posts.urls')),
+    path('peaks/', include('theEndPoint.peaks.urls')),
 ]
 
 if settings.DEBUG:

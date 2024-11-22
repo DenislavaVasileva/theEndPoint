@@ -1,4 +1,3 @@
-
 from django.urls import path, include
 from theEndPoint.posts.views import DashboardView, AddPostView, DetailPostView, EditPostView, DeletePostView, \
     DetailCommentView, EditCommentView, DeleteCommentView
