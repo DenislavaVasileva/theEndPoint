@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block style %}
+    <style>
+        body {
+            background-image: url('{% static "images/test6.jpg" %}');
+            background-size: cover;
+            background-position: center;
+            color: white;
+        }
+    </style>
+{% endblock %}
+
+{% block content %}
+
+
+    <div class="card mb-3 mt-2" style="max-width: 600px;">
+        <div class="card-body bg-dark text-light">
+            <h3>{{ peak.name }}</h3>
+            <hr>
+{#            {% if peak.image %}#}
+{#                <img src="{{ peak.image.url }}" alt="Peak Image">#}
+{#            {% endif %}#}
+            <p><strong>Elevation: </strong>{{ peak.elevation }}</p>
+            <p><strong>Mountain Range: </strong>{{ peak.mountain_range }}</p>
+            <p><strong>Fist Ascent Date: </strong>{{ peak.first_ascent_date }}</p>
+            <p><strong>First Climbers: </strong>{{ peak.first_climbers }}</p>
+            <p><strong>Death Rate: </strong>{{ peak.death_rate }}%</p>
+            <p><strong>Description: </strong>{{ peak.description| linebreaks }}</p>
+        </div>
+    </div>
+
+{% endblock %}
