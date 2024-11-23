@@ -40,7 +40,6 @@ class AddPostView(CreateView):
     success_url = reverse_lazy('dashboard')
 
     def form_valid(self, form):
-        # Automatically set the author to the logged-in user
         form.instance.author = self.request.user.profile
         return super().form_valid(form)
 
@@ -52,7 +51,7 @@ class DetailPostView(DetailView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['comment_form'] = AddCommentForm()  # Add the form to the context
+        context['comment_form'] = AddCommentForm()
         context['comments'] = Comment.objects.filter(post=self.object).order_by('-created_at')
         return context
 

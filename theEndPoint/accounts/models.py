@@ -3,6 +3,8 @@ from django.core.validators import MinValueValidator
 from django.db import models
 from django.contrib.auth import get_user_model
 from theEndPoint.accounts.choices import ClimberTypeChoices
+from theEndPoint.peaks.models import Peak
+
 UserModel = get_user_model()
 
 
@@ -29,6 +31,12 @@ class Profile(models.Model):
     bio = models.TextField(
         blank=True,
         null=True,
+    )
+
+    wish_list = models.ManyToManyField(
+        to=Peak,
+        related_name='wished_by',
+        blank=True
     )
 
     def __str__(self):
