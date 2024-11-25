@@ -1,0 +1,32 @@
+[
+{
+  "model": "posts.category",
+  "fields": {
+    "name": "Gear"
+  }
+},
+{
+  "model": "posts.category",
+  "fields": {
+    "name": "Routes"
+  }
+},
+{
+  "model": "posts.category",
+  "fields": {
+    "name": "Preparation"
+  }
+},
+{
+  "model": "posts.category",
+  "fields": {
+    "name": "Stories"
+  }
+},
+{
+  "model": "posts.category",
+  "fields": {
+    "name": "Guides"
+  }
+}
+]

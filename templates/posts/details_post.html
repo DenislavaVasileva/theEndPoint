@@ -57,6 +57,7 @@
                 {% for comment in comments %}
                     <li class=" list-group-item bg-dark bg-opacity-50 text-light mb-2">
                         <strong>{{ comment.author }}</strong> said:
+                        <hr>
                         <p>{{ comment.content }}</p>
                         <small>
                             Posted on {{ comment.created_at|date:"d-M-Y H:i" }} |

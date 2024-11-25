@@ -1,41 +1,52 @@
 {% extends 'base.html' %}
 {% load static %}
+{% block style %}
+    <style>
+        body {
+            background-image: url('{% static "images/test6.jpg" %}');
+            background-size: cover;
+            background-position: center;
+            color: white;
+        }
+    </style>
+{% endblock %}
 {% block content %}
-    <div class="container p-4">
-        <h2>{{ profile.user.username }}'s Profile</h2>
 
-        <div class="card mb-3" style="max-width: 600px;">
-            <div class="card-body bg-dark text-light">
 
-                {% if profile.profile_picture %}
-                    <img src="{{ profile.profile_picture.url }}" alt="Profile Picture" class="img-thumbnail mb-3"
-                         style="width: 150px; height: 150px; object-fit: cover;">
-                {% else %}
+    <div class="card mb-3 mt-2" style="max-width: 600px;">
+        <div class="card-body bg-dark text-light">
 
-                    <img src="{% static 'images/pngtree-user-avatar-icon-profile-silhouette-png-image_5252378.png' %}"
-                         alt="Default Profile Picture" class="img-thumbnail mb-3"
-                         style="width: 150px; height: 150px; object-fit: cover;">
-                {% endif %}
+            {% if profile.profile_picture %}
+                <img src="{{ profile.profile_picture.url }}" alt="Profile Picture" class="img-thumbnail mb-3"
+                     style="width: 150px; height: 150px; object-fit: cover;">
+            {% else %}
 
-                <h5 class="card-title">Personal Information</h5>
-                <p><strong>First Name:</strong> {{ profile.user.first_name }}</p>
-                <p><strong>Last Name:</strong> {{ profile.user.last_name }}</p>
-                <p><strong>Email:</strong> {{ profile.user.email }}</p>
-                <p><strong>Age:</strong> {{ profile.age }}</p>
-                <p><strong>Climber Type:</strong> {{ profile.type_of_climber }}</p>
-                <p><strong>Bio:</strong> {{ profile.bio }}</p>
-                <p><strong>Wish List:</strong></p>
-                <ul>
-                    {% for peak in profile.wish_list.all %}
-                        <li>{{ peak.name }}</li>
-                    {% empty %}
-                        <p>No peaks yet.</p>
-                    {% endfor %}
-                </ul>
-            </div>
+                <img src="{% static 'images/pngtree-user-avatar-icon-profile-silhouette-png-image_5252378.png' %}"
+                     alt="Default Profile Picture" class="img-thumbnail mb-3"
+                     style="width: 150px; height: 150px; object-fit: cover;">
+            {% endif %}
+            <h2>{{ profile.user.username }}</h2>
+            <hr>
+            <p><strong>First Name:</strong> {{ profile.user.first_name }}</p>
+            <p><strong>Last Name:</strong> {{ profile.user.last_name }}</p>
+            <p><strong>Email:</strong> {{ profile.user.email }}</p>
+            <p><strong>Age:</strong> {{ profile.age }}</p>
+            <p><strong>Climber Type:</strong> {{ profile.type_of_climber }}</p>
+            <p><strong>Bio:</strong> {{ profile.bio }}</p>
+            <p><strong>Wish List:</strong></p>
+            <ul>
+                {% for peak in profile.wish_list.all %}
+                    <li>{{ peak.name }}</li>
+                {% empty %}
+                    <p>No peaks yet.</p>
+                {% endfor %}
+            </ul>
+            <hr>
+            {% if request.user.profile == profile %}
+                <a href="{% url 'profile_edit' user.profile.pk %}" class="btn btn-outline-light">Edit Profile</a>
+            {% endif %}
         </div>
-        {% if request.user.profile == profile %}
-            <a href="{% url 'profile_edit' user.profile.pk %}" class="btn btn-outline-light">Edit Profile</a>
-        {% endif %}
     </div>
+
+
 {% endblock %}
