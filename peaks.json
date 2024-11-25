@@ -1,0 +1,184 @@
+[
+{
+  "model": "peaks.peak",
+  "fields": {
+    "name": "K2 (Chogori)",
+    "elevation": "8.661",
+    "mountain_range": "Karakoram",
+    "first_ascent_date": "1954-07-31",
+    "first_climbers": "Lino Lacedelli, Achille Compagnoni",
+    "image": "peaks_image/K2.PNG",
+    "death_rate": "22.80",
+    "description": "The greatest, the hardest, the last.\r\nThere are countless reasons why K2 remained for so many years the only 8000m peak unclimbed during the winter season. Even in the most favourable summer climbing conditions K2 quickly gained the reputation as æSavage MountainÆ which has clearly contributed to the mountainÆs strong allure for generations of mountaineers.\r\n\r\nWinter brings with it a whole different level of danger and challenge. Numerous teams have attempted since 1987/88, but all have fallen short. Not only do the sheerness of the slopes and overall exposure create a technically challenging climb, weather is always the great opponent on K2 all year round. Summit winds reach hurricane force, still-air temperatures are well below -65 degrees and the winterÆs low barometric pressure means even less oxygen û so the margins of error are almost non-existent, the smallest mistake could have catastrophic consequences and until now why many considered it to be an impossible mission."
+  }
+},
+{
+  "model": "peaks.peak",
+  "fields": {
+    "name": "Mount Everest",
+    "elevation": "8.848",
+    "mountain_range": "Himalayas",
+    "first_ascent_date": "1953-05-29",
+    "first_climbers": "Sir Edmund Hillary, Tenzing Norgay",
+    "image": "peaks_image/Everest.PNG",
+    "death_rate": "1.40",
+    "description": "The highest, the mightiest, the dream.\r\nStanding as the pinnacle of Earth's grandeur, Mount Everest has captivated the hearts and minds of adventurers for centuries. As the tallest mountain on the planet, rising to an awe-inspiring 8,848.86 meters, it represents the ultimate challenge in mountaineering. Its height alone demands respect, but the real battle lies in the unforgiving conditions of its icy slopes.\r\n\r\nWhile its summit has seen countless triumphs, Everest remains a mountain of profound danger. The ôDeath Zone,ö with its lack of oxygen, forces climbers into a race against time, where every step can feel like an eternity. Treacherous crevasses, avalanches, and unpredictable weather create an ever-present threat. Summit winds exceed 160 km/h, temperatures plunge below -40 degrees, and the human body begins to deteriorate with every passing moment at altitude.\r\n\r\nThe allure of Everest lies not only in its imposing height but also in the stories of those who dared to dream of its summit. For every success, there have been many tragedies, a reminder that this mighty peak allows no room for error. Yet, for those who ascend, Everest offers a chance to touch the heavens, to stand atop the world, and to experience the profound beauty and harshness of natureÆs ultimate frontier."
+  }
+},
+{
+  "model": "peaks.peak",
+  "fields": {
+    "name": "Kangchenjunga",
+    "elevation": "8.586",
+    "mountain_range": "Himalayas",
+    "first_ascent_date": "1955-05-25",
+    "first_climbers": "George Band, Joe Brown",
+    "image": "peaks_image/Capture.PNG",
+    "death_rate": "15.00",
+    "description": "The sacred, the remote, the untamed.\r\nKangchenjunga, the worldÆs third-highest mountain, stands as a symbol of reverence and challenge in the mountaineering world. Rising to a staggering 8,586 meters, its name translates to \"The Five Treasures of Snow,\" a nod to the mountain's five majestic peaks, each representing divine wealth in the form of gold, silver, grain, knowledge, and scriptures. But beyond its sacred significance lies a wilderness that few dare to conquer.\r\n\r\nUnlike its taller counterparts, Kangchenjunga's allure is steeped in its untouched beauty and unpredictable nature. The ascent is treacherous, defined by deep avalanches, towering ice walls, and a labyrinth of crevasses. Its isolation amplifies the difficulty, as climbers navigate through remote valleys and unpredictable weather systems that cloak the peaks in swirling storms. Summit winds rival those of the highest peaks, and temperatures plunge to life-threatening lows, testing even the most seasoned climbers.\r\n\r\nKangchenjungaÆs mystique is further heightened by a tradition of humilityùmany climbers stop just short of its summit out of respect for the sacred status it holds among the local people. For those who dare to scale its slopes, Kangchenjunga offers an unparalleled journey through solitude, danger, and awe-inspiring beautyùa reminder that the true treasure lies in the mountain itself."
+  }
+},
+{
+  "model": "peaks.peak",
+  "fields": {
+    "name": "Annapurna I",
+    "elevation": "8.091",
+    "mountain_range": "Himalayas",
+    "first_ascent_date": "1950-06-03",
+    "first_climbers": "Maurice Herzog,  Louis Lachenal",
+    "image": "peaks_image/Annapurna.jpg",
+    "death_rate": "27.20",
+    "description": "The deadly beauty, the silent conqueror.\r\nAnnapurna, rising to 8,091 meters, is the tenth-highest mountain in the world and a name that echoes both magnificence and peril. Nestled in the heart of Nepal's Himalayas, its name, meaning \"Goddess of the Harvest,\" belies the treacherous nature of its slopes. With the highest fatality rate among the 8000-meter peaks, Annapurna has earned a reputation as one of the most dangerous mountains to climb.\r\n\r\nIts dramatic faces, including the iconic South Face, present climbers with sheer walls of ice and rock, avalanches, and unpredictable weather. Yet, for those who dare, Annapurna offers unparalleled beautyùa raw and untamed wilderness surrounded by serene valleys and ancient trails.\r\n\r\nAnnapurna is more than a mountain; it is a place of profound contrast, where life and death, beauty and danger, coexist in their purest forms. To reach its summit is not just a triumph of skill and strength but a humbling encounter with the untamed spirit of the Himalayas."
+  }
+},
+{
+  "model": "peaks.peak",
+  "fields": {
+    "name": "Lhotse",
+    "elevation": "8.516",
+    "mountain_range": "Himalayas",
+    "first_ascent_date": "1956-05-18",
+    "first_climbers": "Fritz Luchsinger, Ernst Reiss",
+    "image": "peaks_image/Lhotse.jpg",
+    "death_rate": "2.00",
+    "description": "The shadowed giant, the formidable neighbor.\r\nLhotse, the fourth-highest mountain in the world at 8,516 meters, stands in the towering shadow of its famous neighbor, Everest. Yet, it commands immense respect in its own right, with a summit route that demands precision and endurance. The name \"Lhotse,\" meaning \"South Peak\" in Tibetan, reflects its geographical connection to Everest, but the climb to its summit is an entirely unique and formidable challenge.\r\n\r\nDefined by steep, icy walls and the notorious Lhotse Faceùa sheer incline of blue ice that tests even the most experienced climbersùLhotse is a true test of technical skill and determination. Weather on its slopes is unforgiving, with brutal winds and bone-chilling temperatures, and its proximity to Everest adds an element of unpredictability as storms sweep across the Himalayan range.\r\n\r\nFor those who seek to stand atop its isolated peak, Lhotse offers more than the thrill of conquest; it presents the chance to tackle one of mountaineeringÆs greatest challenges, a peak where triumph is measured as much by survival as by success."
+  }
+},
+{
+  "model": "peaks.peak",
+  "fields": {
+    "name": "Makalu",
+    "elevation": "8.485",
+    "mountain_range": "Himalayas",
+    "first_ascent_date": "1955-05-15",
+    "first_climbers": "Jean Couzy, Lionel Terray",
+    "image": "peaks_image/Makalu.jpg",
+    "death_rate": "9.00",
+    "description": "The isolated titan, the untamed pyramid.\r\nMakalu, the worldÆs fifth-highest mountain at 8,485 meters, is a majestic yet unforgiving peak. Known for its distinctive pyramid-shaped summit, it stands as a beacon of wilderness and challenge in the remote heart of the Himalayas. Its sheer faces and knife-edge ridges make it one of the most technically demanding climbs among the 8000-meter giants.\r\n\r\nMakaluÆs isolation only amplifies its difficulty. Far from the bustling trails of its more famous neighbors, climbers must contend with extreme weather, relentless winds, and the towering Makalu-La pass, where the journey begins. The mountain demands perfectionùits steep ice walls, exposed ridgelines, and fragile cornices leave no margin for error.\r\n\r\nFor those bold enough to attempt it, Makalu offers a raw, unfiltered adventureùwhere the climb is as much about skill and endurance as it is about embracing the solitude and spirit of one of the HimalayasÆ most awe-inspiring giants."
+  }
+},
+{
+  "model": "peaks.peak",
+  "fields": {
+    "name": "Manaslu",
+    "elevation": "8.163",
+    "mountain_range": "Himalayas",
+    "first_ascent_date": "1956-05-09",
+    "first_climbers": "Toshio Imanishi, Gyalzen Norbu",
+    "image": "peaks_image/Manaslu.jpg",
+    "death_rate": "8.00",
+    "description": "The spirit mountain, the wild guardian.\r\nManaslu, soaring to 8,163 meters, is the eighth-highest mountain in the world and a symbol of untamed beauty in the Himalayas. Its name, derived from the Sanskrit word \"Manasa,\" meaning \"Mountain of the Spirit,\" reflects the reverence it commands among both locals and climbers. Rising in the Mansiri Himal of Nepal, its slopes are as alluring as they are unforgiving.\r\n\r\nManasluÆs ascent is a test of endurance and technical skill. Climbers face steep ice walls, towering seracs, and the constant threat of avalanches. The mountainÆs remote location adds another layer of difficulty, requiring days of trekking through dense forests and remote villages to reach its base camp. Summit attempts often battle fierce winds and subzero temperatures, with the final push demanding focus and resolve.\r\n\r\nFor those who venture to its heights, Manaslu offers more than the triumph of a successful climbùit provides an intimate encounter with the raw, unspoiled power of nature. A climb here is as much about spirit and respect as it is about skill and strength."
+  }
+},
+{
+  "model": "peaks.peak",
+  "fields": {
+    "name": "Nanga Parbat",
+    "elevation": "8.125",
+    "mountain_range": "Himalayas",
+    "first_ascent_date": "1953-07-03",
+    "first_climbers": "Hermann Buhl",
+    "image": "peaks_image/NangaParbat.png",
+    "death_rate": "20.75",
+    "description": "The killer mountain, the lonely giant.\r\nNanga Parbat, towering at 8,126 meters, is the ninth-highest mountain in the world and one of the most formidable peaks on Earth. Its name, meaning \"Naked Mountain,\" reflects its stark, dramatic slopes that rise abruptly from the surrounding plains of PakistanÆs Gilgit-Baltistan region. As the western sentinel of the Himalayas, it stands isolated and imposing, a solitary giant commanding respect and awe.\r\n\r\nNanga Parbat's infamous reputation as the \"Killer Mountain\" stems from its treacherous terrain and harsh conditions. Climbers face sheer rock faces, avalanches, and the massive Rupal Faceùthe tallest mountain face in the world. Its remote location and unpredictable weather amplify the challenge, making every ascent a test of resilience and courage.\r\n\r\nFor those daring enough to attempt it, Nanga Parbat offers an adventure into one of the most untamed and dangerous realms of the high mountains. To stand on its summit is to conquer not just a peak but a legend, a place where natureÆs raw power and beauty intertwine in both glory and peril."
+  }
+},
+{
+  "model": "peaks.peak",
+  "fields": {
+    "name": "Broad Peak",
+    "elevation": "8.051",
+    "mountain_range": "Karakoram",
+    "first_ascent_date": "1957-07-09",
+    "first_climbers": "Fritz Wintersteller, Marcus Schmuck, Kurt Diemberger, Hermann Buhl",
+    "image": "peaks_image/BroadPeak.png",
+    "death_rate": "5.00",
+    "description": "The vast giant, the quiet sentinel.\r\nBroad Peak, the 12th-highest mountain in the world at 8,051 meters, stands as a proud member of the Karakoram range. Named for its massive summit ridge stretching over 1.5 kilometers, the mountainÆs sheer breadth sets it apart from its towering neighbors like K2. Though its name may lack drama, the challenges it presents are anything but ordinary.\r\n\r\nBroad PeakÆs ascent is a journey through icy ridges, steep snowfields, and the unforgiving high-altitude environment of the Karakoram. Its exposed routes and unpredictable weather test climbersÆ endurance and resilience, while its remote location demands days of effort just to reach the mountainÆs base. The summit ridge itself offers a unique challenge, with multiple false summits that force climbers to push both their limits and their patience.\r\n\r\nFor those who brave its wide expanse, Broad Peak offers a rare combination of beauty and challengeùa climb that is as vast and demanding as the name suggests, yet deeply rewarding for those who succeed."
+  }
+},
+{
+  "model": "peaks.peak",
+  "fields": {
+    "name": "Cho Oyu",
+    "elevation": "8.188",
+    "mountain_range": "Himalayas",
+    "first_ascent_date": "1954-10-19",
+    "first_climbers": "Joseph Joechler, Pasang Dawa Lama,  Herbert Tichy",
+    "image": "peaks_image/Cho.png",
+    "death_rate": "1.40",
+    "description": "The accessible giant, the hidden challenge.\r\nCho Oyu, the sixth-highest mountain in the world at 8,188 meters, is often regarded as the \"easiest\" of the 8000-meter peaks. Its name, meaning \"Turquoise Goddess\" in Tibetan, reflects its serene beauty, but this giantÆs gentle reputation hides a formidable reality. Though its slopes may lack the ferocity of Everest or K2, Cho Oyu demands immense physical endurance, precise acclimatization, and respect for the high-altitude environment.\r\n\r\nSituated near the Nepal-Tibet border, Cho Oyu offers a less technical climb, with a straightforward route compared to other peaks. However, its windswept plateaus, crevasses, and unpredictable weather challenge climbers at every step. The summit day, marked by thin air and biting cold, is a test of resilience and determination.\r\n\r\nFor many, Cho Oyu serves as a gateway into the elite club of 8000-meter climbers, offering a rare balance between accessibility and adventure. But make no mistakeùstanding atop its summit is a testament to skill, preparation, and respect for the mountains."
+  }
+},
+{
+  "model": "peaks.peak",
+  "fields": {
+    "name": "Dhaulagiri I",
+    "elevation": "8.167",
+    "mountain_range": "Himalayas",
+    "first_ascent_date": "1960-05-13",
+    "first_climbers": "Kurt Diemberger, Peter Diener,  Nawang Dorje, Nima Dorje, Ernst Forrer, Albin Schelbert",
+    "image": "peaks_image/Dhaulagiri.jpg",
+    "death_rate": "13.50",
+    "description": "The white mountain, the solitary sentinel.\r\nDhaulagiri, standing at 8,167 meters, is the seventh-highest mountain in the world and a beacon of raw Himalayan grandeur. Its name, meaning \"White Mountain\" in Sanskrit, reflects the dazzling snowfields that cloak its steep faces and ridgelines. Isolated from other 8000-meter peaks, it rises alone in the vast expanse of the Kali Gandaki Valley, exuding both majesty and remoteness.\r\n\r\nRenowned for its technical difficulty, Dhaulagiri demands absolute focus and skill. Its routes are marked by sheer ice walls, treacherous avalanches, and rapidly changing weather. The summit push is an unforgiving trial, with climbers navigating narrow ridges and battling fierce winds at extreme altitudes.\r\n\r\nFor those who seek a challenge beyond the ordinary, Dhaulagiri offers an unparalleled adventure. Its ascent is not just a test of endurance but a journey into one of the most breathtaking and unspoiled corners of the Himalayasùa place where the mountainÆs beauty is matched only by its unforgiving nature."
+  }
+},
+{
+  "model": "peaks.peak",
+  "fields": {
+    "name": "Gasherbrum I",
+    "elevation": "8.080",
+    "mountain_range": "Karakoram",
+    "first_ascent_date": "1958-07-05",
+    "first_climbers": "Andrew Kauffman, Pete Schoening",
+    "image": "peaks_image/Gasherbrum_I.jpg",
+    "death_rate": "7.00",
+    "description": "The hidden peak, the veiled challenge.\r\nGasherbrum I, standing at 8,080 meters, is the 11th-highest mountain in the world and a jewel of the Karakoram range. Known as \"Hidden Peak\" for its secluded location within the Gasherbrum massif, it is a mountain of mystery and allure, drawing climbers to its isolated, windswept slopes.\r\n\r\nGasherbrum I is renowned for its sharp ridges, crevassed glaciers, and steep, icy walls that demand both technical skill and mental fortitude. Its remote position, deep within the Karakoram, adds to the challenge, requiring climbers to endure long, arduous journeys to even reach its base camp. The unpredictable weather and harsh conditions of the high altitudes ensure that every step is a battle against nature.\r\n\r\nFor those who venture to its summit, Gasherbrum I offers more than the triumph of conquestùit delivers an experience of solitude and awe, a climb into the heart of one of the most remote and rugged mountain landscapes on Earth."
+  }
+},
+{
+  "model": "peaks.peak",
+  "fields": {
+    "name": "Gasherbrum II",
+    "elevation": "8.034",
+    "mountain_range": "Karakoram",
+    "first_ascent_date": "1956-07-07",
+    "first_climbers": "Fritz Moravec, Josef Larch, Hans Willenpart",
+    "image": "peaks_image/gasherbrum_2.jpg",
+    "death_rate": "3.00",
+    "description": "The shining wall, the elegant ascent.\r\nGasherbrum II, standing at 8,035 meters, is the 13th-highest mountain in the world and a striking gem of the Karakoram range. Its name, meaning \"Beautiful Mountain\" in Balti, perfectly reflects the pristine elegance of its glaciated slopes and sharp ridges. Though considered one of the more \"accessible\" 8000-meter peaks, it remains a formidable challenge reserved for the bold and determined.\r\n\r\nThe climb to Gasherbrum IIÆs summit is marked by icy crevasses, steep snowfields, and the constant battle against extreme altitude and weather. Its sweeping views of the KarakoramÆs majestic peaks inspire awe, but its remote location and thin air demand unwavering focus and resilience. The South Gasherbrum Glacier, often the chosen route, is as treacherous as it is stunning, with towering seracs and unpredictable icefalls.\r\n\r\nFor those who dare to stand atop its summit, Gasherbrum II offers more than the satisfaction of successùit delivers a profound sense of accomplishment in one of the most remote and beautiful corners of the world."
+  }
+},
+{
+  "model": "peaks.peak",
+  "fields": {
+    "name": "Shishapangma",
+    "elevation": "8.027",
+    "mountain_range": "Karakoram",
+    "first_ascent_date": "1964-05-02",
+    "first_climbers": "Xu Jing, Chang Chun-yen, Wang Fuzhou",
+    "image": "peaks_image/Shishapangmar.jpg",
+    "death_rate": "7.30",
+    "description": "The gracious giant, the beauty peak.\r\nShishapangma, the 14th-highest mountain in the world at 8,027 meters, is a serene and majestic presence in the Himalayan range. Nestled entirely within Tibet, its name, meaning \"Crest Above the Grassy Plains,\" reflects the tranquil beauty of its surroundings. Yet, beneath its calm exterior lies a challenge that commands respect from even the most experienced climbers.\r\n\r\nKnown as the most accessible of the 8000-meter peaks, ShishapangmaÆs allure lies in its elegance and solitude. The climb, often approached from its northern face, involves steep snowfields, crevassed glaciers, and the ever-present risk of sudden storms. Its remoteness adds to the adventure, requiring climbers to navigate the high-altitude plateaus of the Tibetan wilderness before even reaching its slopes.\r\n\r\nFor those who venture to its summit, Shishapangma offers more than the thrill of altitudeùit provides a journey through one of the most peaceful yet challenging landscapes on Earth, where the grandeur of the Himalayas meets the spirit of adventure."
+  }
+}
+]
