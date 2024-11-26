@@ -3,10 +3,9 @@
     <div class="p-3 mb-5 bg-dark bg-opacity-75">
         <h1 class=" mb-4 text-light text-center"> Edit Profile </h1>
 
-        <form method="post">
+        <form method="post" enctype="multipart/form-data">
             {% csrf_token %}
             <div class="mb-3">
-
                 <div class="col-md-4 mx-auto">
                     {{ form.type_of_climber.label_tag }}
                     {{ form.type_of_climber }}
@@ -21,6 +20,13 @@
                             {{ form.age.errors|striptags }}
                         </div>
                     {% endif %}
+                </div>
+            </div>
+             
+            <div class="mb-3">
+                <div class="col-md-4 mx-auto">
+                    {{ form.profile_picture.label_tag }}
+                    {{ form.profile_picture }}
                 </div>
             </div>
 

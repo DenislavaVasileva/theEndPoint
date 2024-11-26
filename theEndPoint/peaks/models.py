@@ -32,7 +32,10 @@ class Peak(models.Model):
     )
 
     image = models.ImageField(
-        upload_to='peaks_image/',)
+        upload_to='peaks_image/',
+        null=True,
+        blank=True,
+    )
 
     death_rate = models.DecimalField(
         max_digits=4,

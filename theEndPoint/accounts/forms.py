@@ -64,7 +64,7 @@ class EditProfileForm(forms.ModelForm):
 
     class Meta:
         model = Profile
-        fields = ['type_of_climber', 'age', 'bio']
+        fields = ['type_of_climber', 'age', 'bio', 'profile_picture']
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)

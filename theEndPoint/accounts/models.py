@@ -16,6 +16,11 @@ class Profile(models.Model):
         related_name='profile'
     )
 
+    profile_picture = models.ImageField(
+        upload_to='profile_pictures/',
+        null=True,
+        blank=True
+    )
     type_of_climber = models.CharField(
         max_length=20,
         choices=ClimberTypeChoices.choices,
