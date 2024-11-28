@@ -11,7 +11,6 @@ class DashboardView(ListView):
     template_name = 'posts/dashboard.html'
     model = Post
     context_object_name = 'posts'
-    ordering = ['-created_at']
 
     def get_queryset(self):
         queryset = self.model.objects.all()
@@ -24,7 +23,7 @@ class DashboardView(ListView):
             search = self.request.GET.get('search')
             queryset = queryset.filter(Q(content__icontains=search) | Q(title__icontains=search))
 
-        return queryset
+        return queryset.order_by('-created_at')
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)

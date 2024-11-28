@@ -1,4 +1,18 @@
 {% extends 'base.html' %}
+{% load static %}
+
+{% block style %}
+	<style>
+        body {
+            background-image: url('{% static "images/blog_page_background.jpg" %}');
+            background-size: cover;
+            background-position: top;
+            height: 100vh;
+            color: white;
+        }
+    </style>
+{% endblock %}
+
 {% block content %}
 <div class="p-3 mb-5 bg-dark bg-opacity-75">
         <h1 class=" mb-4 text-light text-center"> Edit Comment </h1>

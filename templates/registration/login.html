@@ -1,4 +1,18 @@
 {% extends 'base.html' %}
+{% load static %}
+{% block style %}
+
+    <style>
+        body {
+            background-image: url('{% static "images/k2_home.jfif" %}');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            color: white;
+        }
+    </style>
+
+{% endblock %}
 {% block content %}
 
     <div class="p-3 mb-5 bg-dark bg-opacity-75">

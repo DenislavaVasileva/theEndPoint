@@ -6,7 +6,7 @@ from theEndPoint.accounts.forms import RegisterUserForm, EditProfileForm
 from theEndPoint.accounts.models import Profile
 
 
-class UserRegisterView(CreateView):
+class RegisterUserView(CreateView):
     form_class = RegisterUserForm
     template_name = 'registration/register.html'
     success_url = reverse_lazy('home')
@@ -37,5 +37,7 @@ class EditProfileView(LoginRequiredMixin, UpdateView):
     model = Profile
     form_class = EditProfileForm
     template_name = 'profile/profile_edit.html'
-    success_url = reverse_lazy('profile_details')
 
+    def get_success_url(self):
+        from django.urls import reverse
+        return reverse('profile_details', kwargs={'pk': self.object.pk})

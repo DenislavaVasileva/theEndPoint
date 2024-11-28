@@ -11,40 +11,21 @@ class RegisterUserForm(UserCreationForm):
     class Meta:
         model = UserModel
         fields = ['username', 'email', 'password1', 'password2']
-        help_texts = {'username': ''}
-        labels = {
-            'username': 'Username:',
-            'email': 'Email:',
-        }
-
-        widgets = {
-            'username': forms.TextInput(attrs={
-                'class': 'form-control',
-                'placeholder': 'ExampleUsername123'
-            }),
-
-            'email': forms.EmailInput(attrs={
-                'class': 'form-control',
-                'placeholder': 'user_email@example.com'
-            }),
-
-        }
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
 
-        password_fields = ['password1', 'password2']
-        placeholders = ['Create a password...', 'Confirm your password']
+        the_fields = ['password1', 'password2', 'username', 'email']
+        placeholders = ['Create a password...', 'Confirm your password', 'ExampleUsername123', 'user_email@example.com']
+        labels = ['Password:', 'Password confirmation:', 'Username:', 'Email:']
 
-        for field, placeholder in zip(password_fields, placeholders):
+        for field, placeholder, label in zip(the_fields, placeholders, labels):
             self.fields[field].widget.attrs.update({
                 'class': 'form-control',
-                'placeholder': placeholder
+                'placeholder': placeholder,
             })
+            self.fields[field].label = label
             self.fields[field].help_text = None
-
-        self.fields['password1'].label = 'Password'
-        self.fields['password2'].label = 'Password confirmation'
 
 
 class EditProfileForm(forms.ModelForm):
@@ -64,15 +45,14 @@ class EditProfileForm(forms.ModelForm):
 
     class Meta:
         model = Profile
-        fields = ['type_of_climber', 'age', 'bio', 'profile_picture']
+        fields = ['type_of_climber', 'age', 'bio', 'profile_picture',]
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         user = self.instance.user
 
-        self.fields['first_name'].initial = user.first_name
-        self.fields['last_name'].initial = user.last_name
-        self.fields['email'].initial = user.email
+        for field in ['first_name', 'last_name', 'email']:
+            self.fields[field].initial = getattr(user, field, '')
 
         for field in self.fields:
             self.fields[field].widget.attrs.update({

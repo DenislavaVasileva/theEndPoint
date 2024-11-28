@@ -1,15 +1,17 @@
 {% extends 'base.html' %}
 {% load static %}
+
 {% block style %}
     <style>
         body {
-            background-image: url('{% static "images/rabotka_gerka2560x1440-19800.jpg" %}');
+            background-image: url('{% static "images/blog_page_background.jpg" %}');
             background-size: cover;
             background-position: top;
             color: white;
         }
     </style>
 {% endblock %}
+
 {% block content %}
 
      <nav class="navbar navbar-expand-lg bg-dark bg-opacity-75">
@@ -46,7 +48,7 @@
                     {% endif %}
                 </ul>
                 <form method="GET" class="d-flex" role="search">
-                    {{ search_form.as_p }} <!-- Render the form fields -->
+                    {{ search_form.as_p }} 
                     <button class="btn btn-outline-light ms-2" style="height: fit-content" type="submit">Search</button>
                 </form>
             </div>
@@ -79,7 +81,7 @@
                 </div>
             {% endfor %}
         {% else %}
-            <div class="p-2 bg-dark text-center rounded-3">
+            <div class="p-2 bg-dark bg-opacity-75 text-center rounded-3">
                 <h1>No Posts Yet</h1>
             </div>
         {% endif %}

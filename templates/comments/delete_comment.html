@@ -1,4 +1,18 @@
 {% extends 'base.html' %}
+{% load static %}
+
+{% block style %}
+	<style>
+        body {
+            background-image: url('{% static "images/blog_page_background.jpg" %}');
+            background-size: cover;
+            background-position: top;
+            height: 100vh;
+            color: white;
+        }
+    </style>
+{% endblock %}
+
 {% block content %}
     <div class=" text-center text-light mt-5">
         <div class="p-2  bg-dark bg-opacity-75 ">
