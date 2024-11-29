@@ -1,6 +1,7 @@
-from django.core.validators import MinLengthValidator
+from django.core.validators import MinLengthValidator, MinValueValidator, MaxValueValidator
 from django.db import models
 from theEndPoint.peaks.choices import MountainRangeChoice
+from theEndPoint.peaks.validators import image_size_validator
 
 
 class Peak(models.Model):
@@ -33,13 +34,18 @@ class Peak(models.Model):
 
     image = models.ImageField(
         upload_to='peaks_image/',
+        validators=[image_size_validator],
         null=True,
         blank=True,
     )
 
     death_rate = models.DecimalField(
-        max_digits=4,
+        max_digits=5,
         decimal_places=2,
+        validators=[
+            MinValueValidator(0),
+            MaxValueValidator(100),
+        ],
     )
 
     description = models.TextField()

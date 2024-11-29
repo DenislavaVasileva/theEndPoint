@@ -1,6 +1,7 @@
 from django.core.validators import MinLengthValidator
 from django.db import models
 from theEndPoint.accounts.models import Profile
+from theEndPoint.peaks.validators import image_size_validator
 
 
 class Category(models.Model):
@@ -48,6 +49,7 @@ class Post(models.Model):
 
     post_image = models.ImageField(
         upload_to='posts_image/',
+        validators=[image_size_validator],
         null=True,
         blank=True,
     )

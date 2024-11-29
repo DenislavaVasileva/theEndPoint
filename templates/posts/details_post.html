@@ -17,7 +17,7 @@
         <small>Category: {{ post.category }}</small>
         <hr>
         {% if post.post_image %}
-            <img src="{{ post.post_image.url }}" alt="Post Image">
+            <img src="{{ post.post_image.url }}" alt="Post Image" style="width: 400px; height: 300px; object-fit: cover;">
         {% endif %}
         <p>{{ post.content| linebreaks }}</p>
         <hr>
