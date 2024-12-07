@@ -1,7 +1,10 @@
+from django.contrib.auth import get_user_model
 from django.core.validators import MinLengthValidator
 from django.db import models
 from theEndPoint.accounts.models import Profile
 from theEndPoint.peaks.validators import image_size_validator
+
+UserModel = get_user_model()
 
 
 class Category(models.Model):
@@ -74,3 +77,20 @@ class Comment(models.Model):
     created_at = models.DateTimeField(
         auto_now_add=True,
     )
+
+
+class Like(models.Model):
+    post = models.ForeignKey(
+        to=Post,
+        on_delete=models.CASCADE,
+        related_name='post_likes',
+    )
+
+    user = models.ForeignKey(
+        to=UserModel,
+        on_delete=models.CASCADE,
+        related_name='user_likes',
+    )
+
+    class Meta:
+        unique_together = ('user', 'post')

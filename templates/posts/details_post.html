@@ -3,7 +3,7 @@
 {% block style %}
     <style>
         body {
-         color: white;
+            color: white;
         }
     </style>
 {% endblock %}
@@ -14,13 +14,26 @@
     <div class="mb-3 p-3 mt-1 bg-dark rounded-3">
         <h3>{{ post.title }}</h3>
         <small>Posted by {{ post.author }} on {{ post.created_at|date:"d-M-Y" }}</small><br>
-        <small>Category: {{ post.category }}</small>
+        <small>Category: {{ post.category }}</small><br>
+        <small>Likes: {{ post.post_likes.count }}</small>
         <hr>
         {% if post.post_image %}
-            <img src="{{ post.post_image.url }}" alt="Post Image" style="width: 400px; height: 300px; object-fit: cover;">
+            <img src="{{ post.post_image.url }}" alt="Post Image"
+                 style="width: 400px; height: 300px; object-fit: cover;">
         {% endif %}
         <p>{{ post.content| linebreaks }}</p>
+
         <hr>
+
+        <!-- Like Section -->
+        <form method="post" action="{% url 'like-post' post.id %}">
+            {% csrf_token %}
+            <!-- Like Button -->
+            <button type="submit" class="btn btn-outline-light">Like</button>
+        </form>
+
+        <hr>
+    
         <!--Edit and Delete buttons -->
         <div id="action-buttons">
             {% if user.is_authenticated and user.profile == post.author %}
@@ -30,6 +43,8 @@
         </div>
     </div>
 
+    <!-- Comments Section -->
+    
     {% if user.is_authenticated %}
         <div class="p-2 mb-4">
             <h4 class="text-dark mb-0">Add Comment</h4>

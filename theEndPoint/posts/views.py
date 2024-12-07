@@ -1,9 +1,11 @@
+from django.contrib.auth.mixins import LoginRequiredMixin
 from django.shortcuts import redirect
 from django.urls import reverse_lazy
+from django.views import View
 from django.views.generic import ListView, CreateView, DetailView, UpdateView, DeleteView
 from theEndPoint.posts.forms import AddPostForm, EditPostForm, DeletePostForm, AddCommentForm, SearchForm, \
     EditCommentForm, DeleteCommentForm
-from theEndPoint.posts.models import Post, Category, Comment
+from theEndPoint.posts.models import Post, Category, Comment, Like
 from django.db.models import Q
 
 
@@ -117,3 +119,16 @@ class DeleteCommentView(DeleteView):
 
     def form_invalid(self, form):
         return self.form_valid(form)
+
+
+class LikePostView(LoginRequiredMixin, View):
+    def post(self, request, post_id):
+        post = Post.objects.get(id=post_id)
+        user = request.user
+
+        if Like.objects.filter(user=user, post=post).exists():
+            Like.objects.filter(user=user, post=post).delete()
+        else:
+            Like.objects.create(user=user, post=post)
+
+        return redirect('details-post', post_id=post.id)
