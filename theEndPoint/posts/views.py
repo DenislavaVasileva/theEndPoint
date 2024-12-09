@@ -62,11 +62,10 @@ class DetailPostView(DetailView):
         if form.is_valid():
             comment = form.save(commit=False)
             comment.post = post
-            comment.author = request.user.username
+            comment.author = request.user.profile
             comment.save()
             return redirect('details-post', post_id=post.id)
 
-            # If form is not valid, render the page with errors
         return self.render_to_response({'form': form, 'post': post})
 
 
@@ -75,7 +74,9 @@ class EditPostView(UpdateView):
     form_class = EditPostForm
     template_name = 'posts/edit_post.html'
     pk_url_kwarg = 'post_id'
-    success_url = reverse_lazy('dashboard')
+
+    def get_success_url(self):
+        return reverse_lazy('details-post', kwargs={'post_id': self.object.id})
 
 
 class DeletePostView(DeleteView):
@@ -115,10 +116,12 @@ class DeleteCommentView(DeleteView):
     form_class = DeleteCommentForm
     template_name = 'comments/delete_comment.html'
     pk_url_kwarg = 'comment_id'
-    success_url = reverse_lazy('dashboard')
 
     def form_invalid(self, form):
         return self.form_valid(form)
+
+    def get_success_url(self):
+        return reverse_lazy('details-post', kwargs={'post_id': self.object.post.id})
 
 
 class LikePostView(LoginRequiredMixin, View):

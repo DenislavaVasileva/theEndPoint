@@ -68,8 +68,11 @@ class Comment(models.Model):
         related_name='comments',
     )
 
-    author = models.CharField(
+    author = models.ForeignKey(
+        to=Profile,
+        on_delete=models.CASCADE,
         max_length=50,
+        related_name='profile_comments',
     )
 
     content = models.TextField()

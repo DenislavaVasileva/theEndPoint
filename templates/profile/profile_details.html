@@ -35,6 +35,7 @@
             <hr>
             {% if request.user.profile == profile %}
                 <a href="{% url 'profile_edit' user.profile.pk %}" class="btn btn-outline-light">Edit Profile</a>
+                <a href="{% url 'profile_delete' user.profile.pk %}" class="btn btn-outline-light">Delete Profile</a>
             {% endif %}
         </div>
     </div>
