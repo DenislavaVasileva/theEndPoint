@@ -12,6 +12,7 @@
 
     <title>The End Point</title>
 
+    <!-- Styling -->
     {% block style %}
 
         <style>
@@ -24,9 +25,12 @@
         </style>
 
     {% endblock %}
+
 </head>
+
 <body>
 
+<!-- Navigation -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container-fluid">
         {% if request.user.is_authenticated and request.user.profile %}
@@ -34,9 +38,9 @@
             <a class="btn btn-outline-light me-2" href="{% url 'profile_details' request.user.profile.pk %}">Profile</a>
 
         {% else %}
-            
+
             <a class="btn btn-outline-light me-2" href="{% url 'login' %}" role="button">Sign In</a>
-            
+
         {% endif %}
 
         <div class="collapse navbar-collapse" id="navbarNav">
@@ -69,10 +73,12 @@
     </div>
 </nav>
 
+<!-- Logout Form -->
 <form id="logout-form" method="post" action="{% url 'logout' %}" style="display: none;">
     {% csrf_token %}
 </form>
 
+<!-- Main Content -->
 <main>
     {% block content %}
     {% endblock %}

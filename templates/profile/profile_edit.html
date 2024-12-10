@@ -1,29 +1,32 @@
-{% extends 'base.html' %}
+{% extends 'common/base.html' %}
 {% load static %}
 {% block style %}
-        
-        <style>
-             body {
-                background-image: url('{% static "images/k2_home.jfif" %}');
-                background-size: cover;
-                background-position: center;
-                color: white;
-            }
-        </style>
 
-    {% endblock %}
+    <style>
+        body {
+            background-image: url('{% static "images/k2_home.jfif" %}');
+            background-size: cover;
+            background-position: center;
+            color: white;
+        }
+    </style>
+
+{% endblock %}
 {% block content %}
     <div class="p-3 mb-5 bg-dark bg-opacity-75">
         <h1 class=" mb-4 text-light text-center"> Edit Profile </h1>
 
+        <!-- Edit Form -->
         <form method="post" enctype="multipart/form-data">
             {% csrf_token %}
+
             <div class="mb-3">
                 <div class="col-md-4 mx-auto">
                     {{ form.type_of_climber.label_tag }}
                     {{ form.type_of_climber }}
                 </div>
             </div>
+
             <div class="mb-3">
                 <div class="col-md-4 mx-auto">
                     {{ form.age.label_tag }}
@@ -35,11 +38,16 @@
                     {% endif %}
                 </div>
             </div>
-             
+
             <div class="mb-3">
                 <div class="col-md-4 mx-auto">
                     {{ form.profile_picture.label_tag }}
                     {{ form.profile_picture }}
+                    {% if form.profile_picture.errors %}
+                        <div class="text-center">
+                            {{ form.profile_picture.errors|striptags }}
+                        </div>
+                    {% endif %}
                 </div>
             </div>
 
@@ -87,7 +95,7 @@
             </div>
 
 
-            <!-- form button -->
+            <!-- Form Button -->
             <div class="d-flex justify-content-center">
                 <button class="btn btn-outline-light" style="width: 33%;">Edit</button>
             </div>

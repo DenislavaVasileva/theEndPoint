@@ -1,4 +1,4 @@
-{% extends 'base.html' %}
+{% extends 'common/base.html' %}
 {% load static %}
 {% block style %}
 
@@ -18,11 +18,14 @@
     <div class="p-3 mb-5 bg-dark bg-opacity-75">
         <h1 class="mb-4 text-light text-center">Welcome!</h1>
         <div class="container">
+
+            <!-- Login Form -->
             <form method="post" class="mx-auto" style="max-width: 300px;">
                 {% csrf_token %}
-                
+
                 {{ form.as_p }}
-                
+
+                <!-- Form  buttons-->
                 <div class="d-flex justify-content-center">
                     <button class="btn btn-outline-light">Sign In</button>
                 </div>

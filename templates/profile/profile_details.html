@@ -1,4 +1,4 @@
-{% extends 'base.html' %}
+{% extends 'common/base.html' %}
 {% load static %}
 
 {% block content %}
@@ -7,15 +7,18 @@
     <div class="card mb-3 mt-2" style="max-width: 600px;">
         <div class="card-body bg-dark text-light">
 
+            <!-- Image Display -->
+
             {% if profile.profile_picture %}
                 <img src="{{ profile.profile_picture.url }}" alt="Profile Picture" class="img-thumbnail mb-3"
                      style="width: 150px; height: 150px; object-fit: cover;">
             {% else %}
-
                 <img src="{% static 'images/default_profile_picture.png' %}"
                      alt="Default Profile Picture" class="img-thumbnail mb-3"
                      style="width: 150px; height: 150px; object-fit: cover;">
             {% endif %}
+            
+            <!-- User's Information Display -->
             <h2>{{ profile.user.username }}</h2>
             <hr>
             <p><strong>First Name:</strong> {{ profile.user.first_name }}</p>
@@ -33,10 +36,12 @@
                 {% endfor %}
             </ul>
             <hr>
+            <!-- Buttons -->
             {% if request.user.profile == profile %}
                 <a href="{% url 'profile_edit' user.profile.pk %}" class="btn btn-outline-light">Edit Profile</a>
                 <a href="{% url 'profile_delete' user.profile.pk %}" class="btn btn-outline-light">Delete Profile</a>
             {% endif %}
+
         </div>
     </div>
 

@@ -1,19 +1,24 @@
-{% extends 'base.html' %}
+{% extends 'common/base.html' %}
 {% load static %}
 
 {% block content %}
     <div class="container text-center text-light mt-5">
         <div class="row">
+        
+        <!-- Peaks Display -->
             {% for peak in peaks %}
                 <div class="col-md-3 mb-4">
                     <div class="card bg-dark text-light h-100">
                         {% if peak.image.url %}
+                            
+                        <!-- Image Display -->    
                         <img src="{{ peak.image.url }}" class="card-img-top" alt="{{ peak.name }}"
                              style="height: 300px; object-fit: cover;">
                          {% else %}   
                             <img src="{% static 'images/default_mountain.avif' %}" class="card-img-top" alt="{{ peak.name }}"
                                  style="height: 300px; object-fit: cover;">
                         {% endif %}
+                    
                         <div class="card-body">
                             <h5 class="card-title">{{ peak.name }}</h5>
                             <p class="card-text">{{ peak.description|truncatewords:6 }}</p>

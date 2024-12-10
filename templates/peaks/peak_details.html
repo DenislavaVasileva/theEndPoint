@@ -1,10 +1,12 @@
-{% extends 'base.html' %}
+{% extends 'common/base.html' %}
 
 {% block content %}
 
 
     <div class="card mb-3 mt-2" style="max-width: 600px;">
         <div class="card-body bg-dark text-light">
+
+            <!-- Peak Information Display -->
             <h3>{{ peak.name }}</h3>
             <p><strong>Total Interest: </strong>{{ total_interest }}</p>
             <hr>
@@ -14,28 +16,33 @@
             <p><strong>First Climbers: </strong>{{ peak.first_climbers }}</p>
             <p><strong>Death Rate: </strong>{{ peak.death_rate }}%</p>
             <p><strong>Description: </strong>{{ peak.description| linebreaks }}</p>
-        
-                <form method="post" action="{% url 'add_to_wishlist' peak.pk %}">
-                    {% csrf_token %}
-                    <button type="submit" class="btn btn-outline-light">Add to Wish List</button>
-                    {% if message %}
-                        <div class="alert alert-info mt-4">
-                            {{ message }}
-                        </div>
-                    {% endif %}
-                </form>
-        
-        
-                <form class="mt-2" method="post" action="{% url 'remove_from_wishlist' peak.pk %}">
-                    {% csrf_token %}
-                    <button type="submit" class="btn btn-outline-light">Remove from Wish List</button>
-                    {% if message_remove %}
-                        <div class="alert alert-info mt-4">
-                            {{ message_remove }}
-                        </div>
-                    {% endif %}
-                </form>
-        
+
+            <!-- Peak Add To Wish List Form  -->
+            <form method="post" action="{% url 'add_to_wishlist' peak.pk %}">
+                {% csrf_token %}
+
+                <!-- Form Button -->
+                <button type="submit" class="btn btn-outline-light">Add to Wish List</button>
+                {% if message %}
+                    <div class="alert alert-info mt-4">
+                        {{ message }}
+                    </div>
+                {% endif %}
+            </form>
+
+            <!-- Peak Remove From Wish List Form  -->
+            <form class="mt-2" method="post" action="{% url 'remove_from_wishlist' peak.pk %}">
+                {% csrf_token %}
+
+                <!-- Form Button -->
+                <button type="submit" class="btn btn-outline-light">Remove from Wish List</button>
+                {% if message_remove %}
+                    <div class="alert alert-info mt-4">
+                        {{ message_remove }}
+                    </div>
+                {% endif %}
+            </form>
+
 
         </div>
     </div>

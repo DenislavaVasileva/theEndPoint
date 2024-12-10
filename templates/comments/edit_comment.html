@@ -1,4 +1,4 @@
-{% extends 'base.html' %}
+{% extends 'common/base.html' %}
 {% load static %}
 
 {% block style %}
@@ -16,7 +16,8 @@
 {% block content %}
 <div class="p-3 mb-5 bg-dark bg-opacity-75">
         <h1 class=" mb-4 text-light text-center"> Edit Comment </h1>
-
+        
+        <!-- Edit Form -->
         <form method="post">
             {% csrf_token %}
 
@@ -28,7 +29,7 @@
             </div>
     
 
-            <!-- form button -->
+            <!-- Form Button -->
             <div class="d-flex justify-content-center">
                 <button class="btn btn-outline-light" style="width: 33%;">Edit</button>
             </div>

@@ -1,4 +1,4 @@
-{% extends 'base.html' %}
+{% extends 'common/base.html' %}
 {% load static %}
 {% block style %}
 
@@ -12,9 +12,11 @@
         }
     </style>
 
+
 {% endblock %}
+
 {% block content %}
-    
+
     <div class="container text-center text-light mt-5">
         <div class="p-5 mb-4 bg-dark bg-opacity-75 rounded-3">
             <h1>The End Point</h1>
@@ -23,5 +25,5 @@
             <a href="{% url 'peaks_dashboard' %}" class="btn btn-outline-light btn-lg">Explore Peaks</a>
         </div>
     </div>
-    
+
 {% endblock %}

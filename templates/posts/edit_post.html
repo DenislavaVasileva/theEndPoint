@@ -1,5 +1,6 @@
-{% extends 'base.html' %}
+{% extends 'common/base.html' %}
 {% load static %}
+
 {% block style %}
 	<style>
         body {
@@ -11,19 +12,24 @@
         }
     </style>
 {% endblock %}
+
 {% block content %}
 <div class="p-3 mb-5 bg-dark bg-opacity-75">
-        <h1 class=" mb-4 text-light text-center"> Edit Post </h1>
 
+        <!-- Edit Form -->
+        <h1 class=" mb-4 text-light text-center"> Edit Post </h1>
+    
         <form method="post" enctype="multipart/form-data">
             {% csrf_token %}
+            
             <div class="mb-3">
-
                 <div class="col-md-4 mx-auto">
                     {{ form.title.label_tag }}
                     {{ form.title }}
+                    {{ form.title.errors }}
                 </div>
             </div>
+            
             <div class="mb-3">
                 <div class="col-md-4 mx-auto">
                     {{ form.author.label_tag }}
@@ -49,11 +55,12 @@
                 <div class="col-md-4 mx-auto">
                     {{ form.post_image.label_tag }}
                     {{ form.post_image }}
+                    {{ form.post_image.errors }}
                 </div>
             </div>
     
 
-            <!-- form button -->
+            <!-- Form Button -->
             <div class="d-flex justify-content-center">
                 <button class="btn btn-outline-light" style="width: 33%;">Edit</button>
             </div>

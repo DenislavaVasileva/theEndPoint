@@ -1,5 +1,6 @@
-{% extends 'base.html' %}
+{% extends 'common/base.html' %}
 {% load static %}
+
 {% block style %}
 	<style>
         body {
@@ -11,10 +12,12 @@
         }
     </style>
 {% endblock %}
+
 {% block content %}
     <div class="p-3 mb-5 bg-dark bg-opacity-75">
         <h1 class=" mb-4 text-light text-center"> Create Post </h1>
-
+        
+        <!-- Add Post Form  -->
         <form method="post" enctype="multipart/form-data">
             {% csrf_token %}
             <div class="mb-3">
@@ -44,11 +47,13 @@
                 <div class="col-md-4 mx-auto">
                     {{ form.post_image.label_tag }}
                     {{ form.post_image }}
+                    {{ form.post_image.errors }}
+                    
                 </div>
             </div>
     
 
-            <!-- form button -->
+            <!-- Form Button -->
             <div class="d-flex justify-content-center">
                 <button class="btn btn-outline-light" style="width: 33%;">Post</button>
             </div>

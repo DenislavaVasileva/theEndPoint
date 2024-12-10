@@ -1,4 +1,4 @@
-{% extends 'base.html' %}
+{% extends 'common/base.html' %}
 {% load static %}
 
 {% block style %}
@@ -13,7 +13,7 @@
 {% endblock %}
 
 {% block content %}
-
+    <!-- Navigation -->
      <nav class="navbar navbar-expand-lg bg-dark bg-opacity-75">
         <div class="container-fluid">
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -28,6 +28,7 @@
                             <li>
                                 <hr class="dropdown-divider">
                             </li>
+                            <!-- Display Categories -->
                             {% for category in categories %}
                                 <li><a class="dropdown-item"
                                        href="?category={{ category.name }}">{{ category.name }}</a></li>
@@ -36,7 +37,6 @@
                     </li>
 
                     {% if request.user.is_authenticated %}
-
                         <li class="nav-item">
                             <a class="nav-link text-light" href="{% url 'add-post' %}">Add Post</a>
                         </li>
@@ -44,20 +44,20 @@
                         <li class="nav-item">
                             <a class="nav-link text-light" href="{% url 'login' %}">Add Post</a>
                         </li>
-
                     {% endif %}
                 </ul>
+            
+                <!-- Search Form -->
                 <form method="GET" class="d-flex" role="search">
-                    {{ search_form.as_p }} 
+                    {{ search_form.as_p }}
+                    <!-- Form Button -->
                     <button class="btn btn-outline-light ms-2" style="height: fit-content" type="submit">Search</button>
                 </form>
             </div>
         </div>
     </nav>
-
-
-
-
+    
+    <!-- Display Posts -->
     <div class="container text-light mt-5">
         {% if posts %}
             {% for post in posts %}
@@ -80,10 +80,13 @@
                     </div>
                 </div>
             {% endfor %}
+            
         {% else %}
+            
             <div class="p-2 bg-dark bg-opacity-75 text-center rounded-3">
                 <h1>No Posts Yet</h1>
             </div>
+            
         {% endif %}
     </div>
 
