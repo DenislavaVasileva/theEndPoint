@@ -1,5 +1,5 @@
 from django.contrib.auth.mixins import LoginRequiredMixin
-from django.shortcuts import redirect
+from django.shortcuts import redirect, get_object_or_404
 from django.urls import reverse_lazy
 from django.views import View
 from django.views.generic import ListView, CreateView, DetailView, UpdateView, DeleteView
@@ -56,18 +56,6 @@ class DetailPostView(DetailView):
         context['comments'] = Comment.objects.filter(post=self.object).order_by('-created_at')
         return context
 
-    def post(self, request, *args, **kwargs):
-        post = self.get_object()
-        form = AddCommentForm(request.POST)
-        if form.is_valid():
-            comment = form.save(commit=False)
-            comment.post = post
-            comment.author = request.user.profile
-            comment.save()
-            return redirect('details-post', post_id=post.id)
-
-        return self.render_to_response({'form': form, 'post': post})
-
 
 class EditPostView(UpdateView):
     model = Post
@@ -88,6 +76,18 @@ class DeletePostView(DeleteView):
 
     def form_invalid(self, form):
         return self.form_valid(form)
+
+
+class AddCommentView(CreateView):
+    model = Comment
+    form_class = AddCommentForm
+
+    def form_valid(self, form):
+        post = get_object_or_404(Post, pk=self.kwargs['post_id'])
+        form.instance.post = post
+        form.instance.author = self.request.user.profile
+        form.save()
+        return redirect('details-post', post_id=post.id)
 
 
 class DetailCommentView(DetailView):

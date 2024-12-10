@@ -48,7 +48,7 @@
     {% if user.is_authenticated %}
         <div class="p-2 mb-4">
             <h4 class="text-dark mb-0">Add Comment</h4>
-            <form method="POST">
+            <form action='{% url 'add_comment' post.id %}' method="POST">
                 {% csrf_token %}
                 {{ comment_form.content.label_tag }}
                 {{ comment_form.content }}
@@ -73,7 +73,7 @@
                         <p>{{ comment.content }}</p>
                         <small>
                             Posted on {{ comment.created_at|date:"d-M-Y H:i" }} |
-                            {% if user.is_authenticated and user.username == comment.author %}
+                            {% if user.is_authenticated and user.profile == comment.author %}
                                 <a class='text-dark' href="{% url 'details_comment' post.pk comment.pk %}">More
                                     Details</a>
                             {% endif %}

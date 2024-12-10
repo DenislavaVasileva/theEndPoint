@@ -1,6 +1,6 @@
 from django.urls import path, include
 from theEndPoint.posts.views import DashboardView, AddPostView, DetailPostView, EditPostView, DeletePostView, \
-    DetailCommentView, EditCommentView, DeleteCommentView, LikePostView
+    DetailCommentView, EditCommentView, DeleteCommentView, LikePostView, AddCommentView
 
 urlpatterns = [
     path('dashboard/', DashboardView.as_view(), name='dashboard'),
@@ -11,6 +11,7 @@ urlpatterns = [
         path('delete/', DeletePostView.as_view(), name='delete-post'),
         path('like/', LikePostView.as_view(), name='like-post'),
     ])),
+    path('<int:post_id>/', AddCommentView.as_view(), name='add_comment'),
     path('<int:post_id>/comment/<int:comment_id>/details/', DetailCommentView.as_view(), name='details_comment'),
     path('<int:post_id>/comment/<int:comment_id>/edit/', EditCommentView.as_view(), name='edit_comment'),
     path('<int:post_id>/comment/<int:comment_id>/delete/', DeleteCommentView.as_view(), name='delete_comment'),
