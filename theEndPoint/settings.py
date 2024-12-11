@@ -36,8 +36,8 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    "unfold",  # before django.contrib.admin
-    "unfold.contrib.filters",  # optional, if special filters are needed
+    "unfold",
+    "unfold.contrib.filters",
     "unfold.contrib.forms",
     'django.contrib.admin',
     'django.contrib.auth',

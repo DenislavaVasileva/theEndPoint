@@ -2,6 +2,7 @@ from django import forms
 from django.contrib.auth import get_user_model
 from django.contrib.auth.forms import UserCreationForm
 from django.core.validators import MinLengthValidator
+
 from theEndPoint.accounts.models import Profile
 
 UserModel = get_user_model()
@@ -34,11 +35,13 @@ class EditProfileForm(forms.ModelForm):
         required=False,
         validators=[MinLengthValidator(2, message='First name is too short!')]
     )
+
     last_name = forms.CharField(
         max_length=30,
         required=False,
         validators=[MinLengthValidator(2, message='Last name is too short!')]
     )
+
     email = forms.EmailField(
         required=True,
     )

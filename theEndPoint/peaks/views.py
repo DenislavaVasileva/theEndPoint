@@ -1,6 +1,7 @@
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import get_object_or_404, redirect, render
 from django.views.generic import ListView, DetailView
+
 from theEndPoint.peaks.models import Peak
 
 
@@ -18,9 +19,11 @@ class PeakDetailView(DetailView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
+
         peak = self.object
         total_interest = peak.wished_by.count()
         context['total_interest'] = total_interest
+
         return context
 
 
@@ -31,12 +34,15 @@ def add_to_wishlist(request, peak_id):
 
     if peak in profile.wish_list.all():
         message = f'{peak.name} is already in your wish list.'
+
         context = {
             'peak': peak,
             'profile': profile,
             'message': message,
         }
+
         return render(request, 'peaks/peak_details.html', context)
+
     else:
         profile.wish_list.add(peak)
         return redirect('peaks_dashboard')
@@ -50,6 +56,7 @@ def remove_from_wishlist(request, peak_id):
     if peak in profile.wish_list.all():
         profile.wish_list.remove(peak)
         message = f'{peak.name} is removed from your wish list.'
+
     else:
         message = f'{peak.name} is not in your wish list.'
 

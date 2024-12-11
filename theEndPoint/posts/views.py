@@ -1,12 +1,27 @@
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.shortcuts import redirect, get_object_or_404
 from django.urls import reverse_lazy
-from django.views import View
-from django.views.generic import ListView, CreateView, DetailView, UpdateView, DeleteView
-from theEndPoint.posts.forms import AddPostForm, EditPostForm, DeletePostForm, AddCommentForm, SearchForm, \
-    EditCommentForm, DeleteCommentForm
-from theEndPoint.posts.models import Post, Category, Comment, Like
 from django.db.models import Q
+
+from django.views import View
+from django.views.generic import (
+    ListView,
+    CreateView,
+    DetailView,
+    UpdateView,
+    DeleteView,
+)
+
+from theEndPoint.posts.forms import (
+    AddPostForm,
+    EditPostForm,
+    DeletePostForm,
+    AddCommentForm,
+    SearchForm,
+    EditCommentForm,
+    DeleteCommentForm,
+)
+from theEndPoint.posts.models import Post, Category, Comment, Like
 
 
 class DashboardView(ListView):
@@ -29,8 +44,10 @@ class DashboardView(ListView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
+
         context['categories'] = Category.objects.all()
         context['search_form'] = SearchForm()
+
         return context
 
 
@@ -52,8 +69,10 @@ class DetailPostView(DetailView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
+
         context['comment_form'] = AddCommentForm()
         context['comments'] = Comment.objects.filter(post=self.object).order_by('-created_at')
+
         return context
 
 
@@ -84,9 +103,11 @@ class AddCommentView(CreateView):
 
     def form_valid(self, form):
         post = get_object_or_404(Post, pk=self.kwargs['post_id'])
+
         form.instance.post = post
         form.instance.author = self.request.user.profile
         form.save()
+
         return redirect('details-post', post_id=post.id)
 
 
@@ -97,7 +118,9 @@ class DetailCommentView(DetailView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
+
         context['post'] = self.object.post
+
         return context
 
 
@@ -131,6 +154,7 @@ class LikePostView(LoginRequiredMixin, View):
 
         if Like.objects.filter(user=user, post=post).exists():
             Like.objects.filter(user=user, post=post).delete()
+
         else:
             Like.objects.create(user=user, post=post)
 

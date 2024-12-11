@@ -1,9 +1,10 @@
-from django.core.validators import MinValueValidator
 from django.db import models
 from django.contrib.auth import get_user_model
+from django.core.validators import MinValueValidator
+
+from theEndPoint.peaks.models import Peak
 from theEndPoint.accounts.choices import ClimberTypeChoices
 from theEndPoint.accounts.validators import image_size_validator
-from theEndPoint.peaks.models import Peak
 
 UserModel = get_user_model()
 
@@ -22,6 +23,7 @@ class Profile(models.Model):
         null=True,
         blank=True
     )
+
     type_of_climber = models.CharField(
         max_length=8,
         choices=ClimberTypeChoices.choices,

@@ -1,6 +1,7 @@
+from django.db import models
 from django.contrib.auth import get_user_model
 from django.core.validators import MinLengthValidator
-from django.db import models
+
 from theEndPoint.accounts.models import Profile
 from theEndPoint.peaks.validators import image_size_validator
 

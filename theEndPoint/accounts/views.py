@@ -1,8 +1,9 @@
 from django.contrib.auth import login, get_user_model
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.urls import reverse_lazy, reverse
-from django.views.generic import DetailView, CreateView, UpdateView, DeleteView
-from theEndPoint.accounts.forms import RegisterUserForm, EditProfileForm
+from django.views.generic import CreateView, DeleteView, DetailView, UpdateView
+
+from theEndPoint.accounts.forms import EditProfileForm, RegisterUserForm
 from theEndPoint.accounts.models import Profile
 
 UserModel = get_user_model()
@@ -29,8 +30,10 @@ class DetailProfileView(LoginRequiredMixin, DetailView):
 
     def get_object(self, queryset=None):
         pk = self.kwargs.get('pk')
+
         if pk:
             return Profile.objects.get(pk=pk)
+
         else:
             return self.request.user.profile
 

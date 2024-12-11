@@ -1,5 +1,11 @@
 from django.urls import path, include
-from theEndPoint.peaks.views import PeakListView, PeakDetailView, add_to_wishlist, remove_from_wishlist
+
+from theEndPoint.peaks.views import (
+    PeakListView,
+    PeakDetailView,
+    add_to_wishlist,
+    remove_from_wishlist
+)
 
 urlpatterns = [
     path('', PeakListView.as_view(), name='peaks_dashboard'),
